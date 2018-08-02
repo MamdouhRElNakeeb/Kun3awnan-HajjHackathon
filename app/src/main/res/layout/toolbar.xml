@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorAccent"
+    android:contentInsetStart="0dp"
+    android:contentInsetEnd="0dp"
+    android:contentInsetRight="0dp"
+    android:contentInsetLeft="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            tools:text="Home"
+            android:typeface="monospace"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/toolbarText"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/toolbarBackIV"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:visibility="gone"
+            android:layout_alignParentStart="true"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/back_arrow"/>
+
+        <ImageView
+            android:id="@+id/toolbarMenuIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/side_menu_icn"
+            android:visibility="gone"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.Toolbar>
