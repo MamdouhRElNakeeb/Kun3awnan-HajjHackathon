@@ -25,9 +25,9 @@
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <ListView
-            android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
             android:orientation="vertical"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
@@ -36,68 +36,6 @@
 
 
         </ListView>
-
-
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:orientation="vertical"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_marginTop="40dp"-->
-        <!--android:layout_marginBottom="40dp"-->
-        <!--android:layout_marginStart="40dp"-->
-        <!--android:layout_marginEnd="40dp">-->
-
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="1"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:orientation="horizontal">-->
-
-        <!--<LinearLayout-->
-        <!--android:id="@+id/getLostLL"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@drawable/btn_gradient"-->
-        <!--android:layout_marginStart="5dp"-->
-        <!--android:layout_marginEnd="5dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="navigateScreen"-->
-        <!--android:orientation="vertical"-->
-        <!--android:gravity="center"-->
-        <!--android:padding="10dp">-->
-
-        <!--<ImageView-->
-        <!--android:src="@drawable/missing_icn"-->
-        <!--android:tint="@color/colorAccent"-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_weight="1"-->
-        <!--android:adjustViewBounds="true" />-->
-
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:textSize="17sp"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:text="Get Lost" />-->
-
-        <!--</LinearLayout>-->
-
-
-        <!--</LinearLayout>-->
-
-
-
-
-        <!--</LinearLayout>-->
-
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -119,6 +57,5 @@
         android:background="@drawable/bg_gradient"
         app:itemTextColor="@color/colorPrimary"
         app:itemIconTint="@color/colorPrimary"/>
-
 
 </android.support.v4.widget.DrawerLayout>
