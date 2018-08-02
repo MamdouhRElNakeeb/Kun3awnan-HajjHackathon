@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -47,7 +48,8 @@
                 android:textSize="14sp"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/accent"
-                android:hint="إسم الحاج"/>
+                android:fontFamily="monospace"
+                android:hint="Hajj Name"/>
         </LinearLayout>
 
         <LinearLayout
@@ -76,7 +78,8 @@
                 android:textSize="14sp"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/accent"
-                android:hint="البريد الإلكترونى"/>
+                android:fontFamily="monospace"
+                android:hint="Email"/>
         </LinearLayout>
 
         <LinearLayout
@@ -106,7 +109,9 @@
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/accent"
                 android:textSize="14sp"
-                android:hint="كلمة المرور"/>
+                android:textAlignment="textStart"
+                android:hint="Password"
+                tools:ignore="RtlCompat" />
         </LinearLayout>
 
 
@@ -135,7 +140,7 @@
                 android:textSize="14sp"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/accent"
-                android:hint="رقم الهاتف"/>
+                android:hint="Phone Number"/>
         </LinearLayout>
 
 
@@ -164,21 +169,22 @@
                 android:textSize="14sp"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/accent"
-                android:hint="الرقم القومى"/>
+                android:hint="National ID"/>
         </LinearLayout>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/RegisterBtn"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="تسجيل الحساب"
+        android:text="Signup"
+        android:textAllCaps="false"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
         android:typeface="monospace"
@@ -191,12 +197,20 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:text="Have an account? Login now"
+        android:text="Already Registered? Login Me."
         android:textAllCaps="false"
         android:textSize="17sp"
+        android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
         android:typeface="monospace"
         android:background="@android:color/transparent"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
 
 </LinearLayout>

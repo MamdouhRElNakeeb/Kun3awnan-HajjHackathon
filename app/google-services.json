@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "443631418340",
+    "firebase_url": "https://a-hajj-in-need.firebaseio.com",
+    "project_id": "a-hajj-in-need",
+    "storage_bucket": "a-hajj-in-need.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443631418340:android:e3d3fef6bad69991",
+        "android_client_info": {
+          "package_name": "com.kun3awnan.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443631418340-9qcababggaium0g7ls3k1uefcncmqh8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9QyAJI5XUU56NMXvO7mVbuyRQHAVLmps"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
