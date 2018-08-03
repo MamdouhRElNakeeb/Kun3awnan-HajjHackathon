@@ -8,13 +8,11 @@ import android.view.View;
 
 import com.kun3awnan.app.R;
 
-public class Home extends AppCompatActivity{
-
+public class main_activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
     }
 
     public void navigateScreen(View v){
@@ -24,10 +22,9 @@ public class Home extends AppCompatActivity{
             case R.id.getLostLL:
                 startActivity(new Intent(getBaseContext(), GetLost.class));
                 break;
-            case R.id.healthLL:
-                startActivity(new Intent (Home.this, health_activity.class));
+            case R.id.health_activity:
+                startActivity(new Intent(getBaseContext(),health_activity.class));
         }
 
     }
-
 }
