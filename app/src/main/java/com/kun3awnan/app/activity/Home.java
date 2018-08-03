@@ -13,7 +13,7 @@ public class Home extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);
+        setContentView(R.layout.main_activity);
 
     }
 
@@ -24,6 +24,8 @@ public class Home extends AppCompatActivity{
             case R.id.getLostLL:
                 startActivity(new Intent(getBaseContext(), GetLost.class));
                 break;
+            case R.id.healthLL:
+                startActivity(new Intent (Home.this, health_activity.class));
         }
 
     }

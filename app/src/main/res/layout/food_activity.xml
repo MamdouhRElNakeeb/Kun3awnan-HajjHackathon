@@ -25,6 +25,7 @@
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <ListView
+            android:id="@+id/food_lv"
             android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
