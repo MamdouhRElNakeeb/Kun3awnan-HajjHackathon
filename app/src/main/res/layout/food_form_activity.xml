@@ -38,22 +38,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/location"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="House Location"
-                android:textSize="20sp"
-                android:fontFamily="sans-serif"
-                android:textColor="@color/primary_text"/>
-
-            <fragment
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,21 +45,23 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/Capacity"
+                    android:id="@+id/food_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Capacity"
+                    android:text="Food"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif"
                     android:textColor="@color/primary_text"/>
 
                 <EditText
+                    android:id="@+id/food_name_field"
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:background="@drawable/btn_solid"/>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,7 +69,31 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/Descrepion"
+                    android:id="@+id/enough_for"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enough For"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/primary_text"/>
+
+                <EditText
+                    android:id="@+id/enough_for_field"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/btn_solid"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/food_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Description"
@@ -92,12 +102,14 @@
                     android:textColor="@color/primary_text"/>
 
                 <EditText
+                    android:id="@+id/food_description_field"
                     android:padding="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:background="@drawable/btn_solid"/>
+                    android:layout_height="270dp"
+                    android:background="@drawable/btn_solid" />
 
             </LinearLayout>
+
 
         </LinearLayout>
 
