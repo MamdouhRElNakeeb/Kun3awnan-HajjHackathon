@@ -33,6 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.kun3awnan.app.R;
 
 public class Signup extends AppCompatActivity {
@@ -58,8 +59,10 @@ public class Signup extends AppCompatActivity {
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-
         db = FirebaseFirestore.getInstance();
+
+//        updateDB();
+
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +97,6 @@ public class Signup extends AppCompatActivity {
                                     Toast.makeText(Signup.this, "Registration Successful",Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
                                     updateDB();
-                                    sendVerificationEmail();
                                 }
                                 else {
                                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
@@ -115,22 +117,35 @@ public class Signup extends AppCompatActivity {
 
     private void updateDB(){
 
-        userRef = db.collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        userRef = db.collection("users").document();
+
+
         // push into Firestore Database
         String name_field = name.getText().toString();
         String phone_field = phone.getText().toString();
         String nationalID_field = nationalID.getText().toString();
+        String deviceToken = FirebaseInstanceId.getInstance().getToken();
+        String userID = auth.getCurrentUser().getUid();
+
+        Log.d("userid", userID);
+
+        Log.d("devToken", deviceToken);
+
         Map<String, Object> note = new HashMap<>();
         note.put("name", name_field);
         //note.put("email", email_field);
         //note.put("password", password_field);
         note.put("phone", phone_field);
         note.put("nationalID", nationalID_field);
-        userRef.set(note)
+        note.put("deviceToken", deviceToken);
+
+        db.collection("users").document(userID)
+                .set(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(Signup.this, "User Added", Toast.LENGTH_SHORT).show();
+                        sendVerificationEmail();
 
                     }
                 })

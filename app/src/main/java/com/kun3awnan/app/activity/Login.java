@@ -22,7 +22,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.kun3awnan.app.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Login extends AppCompatActivity {
     private Button go_to_signup;
@@ -119,6 +123,7 @@ public class Login extends AppCompatActivity {
         {
             // user is verified, so you can finish this activity or send user to activity which you want.
             Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
+            updateDB();
             startActivity(new Intent(Login.this, Home.class));
             finish();
         }
@@ -130,5 +135,30 @@ public class Login extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             FirebaseAuth.getInstance().signOut();
         }
+    }
+
+    private void updateDB(){
+
+        userRef = db.collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        // push into Firestore Database
+        Map<String, Object> note = new HashMap<>();
+        note.put("deviceToken", FirebaseInstanceId.getInstance().getToken());
+
+        userRef.update(note)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(Login.this, "User Added", Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Login.this, "Error!", Toast.LENGTH_SHORT).show();
+                        Log.d("ERROR!", e.toString());
+                    }
+                });
+
     }
 }

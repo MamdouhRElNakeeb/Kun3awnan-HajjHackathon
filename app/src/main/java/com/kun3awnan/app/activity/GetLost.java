@@ -19,6 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.ANRequest;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.OkHttpResponseAndJSONObjectRequestListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -34,6 +38,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.JsonObject;
 import com.kun3awnan.app.R;
 import com.kun3awnan.app.helper.PermissionUtils;
 
@@ -41,6 +46,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import okhttp3.Response;
 
 
 public class GetLost extends AppCompatActivity implements
@@ -191,47 +198,55 @@ public class GetLost extends AppCompatActivity implements
 //        });
     }
 
-    private void getLostRequest(){
+    private void getLostRequest() throws JSONException {
 
         if (mCurrentLocation == null)
             return;
 
-        String userID = getSharedPreferences("User", MODE_PRIVATE).getString("id", "");
-        String campID = getSharedPreferences("User", MODE_PRIVATE).getString("campaign", "");
+        JSONObject notifObj = new JSONObject();
+        JSONObject msgObj = new JSONObject();
 
-//        ANRequest.PostRequestBuilder postRequestBuilder = AndroidNetworking.post(Url.HAGG_TAYEH_REQUEST);
-//
-//        postRequestBuilder.addHeaders("Content-Type", "application/json")
-//                .addBodyParameter("campaign", campID)
-//                .addBodyParameter("user", userID)
-//                .addBodyParameter("lat", String.valueOf(mCurrentLocation.getLatitude()))
-//                .addBodyParameter("lng", String.valueOf(mCurrentLocation.getLongitude()))
-//                .addBodyParameter("insertedAt", String.valueOf(System.currentTimeMillis()))
-//                .build().
-//                getAsOkHttpResponseAndJSONObject(new OkHttpResponseAndJSONObjectRequestListener() {
-//            @Override
-//            public void onResponse(Response okHttpResponse, JSONObject response) {
-//
-//                Log.d("response", response.toString());
-//
-//                try {
-//                    if (response.has("success") && response.getBoolean("success")){
-//                        Toast.makeText(HaggTayehActivity.this, "تم إرسال الطلب بنجاح", Toast.LENGTH_SHORT).show();
-//                        finish();
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            @Override
-//            public void onError(ANError anError) {
-//
-//            }
-//        });
+        JSONObject dataObj = new JSONObject();
+        dataObj.put("body", "open the message to view more details!");
+        dataObj.put("title", "Someone needs help");
+        dataObj.put("reqID", "") ;
+
+        msgObj.put("data", dataObj);
+        msgObj.put("topic", "health");
+        notifObj.put("message", msgObj);
+
+
+        ANRequest.PostRequestBuilder postRequestBuilder = AndroidNetworking.post("https://fcm.googleapis.com/fcm/send");
+
+        postRequestBuilder.addHeaders("Content-Type", "application/json")
+                .addHeaders("Authorization", "key=" + "AIzaSyC9B497SMs_at6Lj61tA7ZOScBLfiEhoQw")
+                .addJSONObjectBody(notifObj)
+                .build().
+                getAsOkHttpResponseAndJSONObject(new OkHttpResponseAndJSONObjectRequestListener() {
+
+                    @Override
+                    public void onResponse(Response okHttpResponse, JSONObject response) {
+
+                        Log.d("response", response.toString());
+
+                        try {
+                            if (response.has("success") && response.getBoolean("success")){
+                                Toast.makeText(GetLost.this, "تم إرسال الطلب بنجاح", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+
+                    }
+
+                });
 
     }
-
 
 
     private void enableMyLocation() {
