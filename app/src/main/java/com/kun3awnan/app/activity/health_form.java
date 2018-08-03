@@ -1,13 +1,19 @@
 package com.kun3awnan.app.activity;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kun3awnan.app.R;
 
 public class health_form extends AppCompatActivity {
@@ -51,6 +57,19 @@ public class health_form extends AppCompatActivity {
             public void onClick(View v) {
                 // specilaization is  stored as a text in spinner_choice
                 // Do your thing
+
+                FirebaseMessaging.getInstance().subscribeToTopic("health")
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                String msg = "subscribed";
+                                if (!task.isSuccessful()) {
+                                    msg = "failed";
+                                }
+                                Log.d("statusOfTopic", msg);
+                                Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         });
 

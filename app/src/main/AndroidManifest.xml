@@ -30,6 +30,7 @@
         <activity android:name=".activity.Signup"/>
         <activity android:name=".activity.Home"/>
         <activity android:name=".activity.GetLost"/>
+        <activity android:name=".activity.main_activity"/>
 
         <!--
             The API key for Google Maps-based APIs is defined as a string resource.

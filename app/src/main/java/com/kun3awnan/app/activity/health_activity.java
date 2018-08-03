@@ -107,16 +107,17 @@ public class health_activity extends AppCompatActivity {
         JSONObject dataObj = new JSONObject();
         dataObj.put("body", "open the message to view more details!");
         dataObj.put("title", "Someone needs help");
-        dataObj.put("reqID", reqRef.getId());
+//        dataObj.put("reqID", reqRef.getId());
 
-        msgObj.put("data", dataObj);
+        msgObj.put("notification", dataObj);
         msgObj.put("topic", "health");
         notifObj.put("message", msgObj);
 
 
         ANRequest.PostRequestBuilder postRequestBuilder = AndroidNetworking.post("https://fcm.googleapis.com/fcm/send");
 
-        postRequestBuilder.addHeaders("Content-Type", "application/json")
+        postRequestBuilder
+                .addHeaders("Content-Type", "application/json")
                 .addHeaders("Authorization", "key=" + "AIzaSyC9B497SMs_at6Lj61tA7ZOScBLfiEhoQw")
                 .addJSONObjectBody(notifObj)
                 .build().
@@ -140,6 +141,9 @@ public class health_activity extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
 
+                        Log.d("errr", anError.getErrorBody());
+                        Log.d("errr", anError.getResponse().message());
+                        Log.d("errr", anError.getMessage());
                     }
 
                 });
