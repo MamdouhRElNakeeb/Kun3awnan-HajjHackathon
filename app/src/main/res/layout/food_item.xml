@@ -17,6 +17,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="@drawable/btn_gradient"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_height="wrap_content"
@@ -27,21 +28,23 @@
 
 
             <TextView
+                android:id="@+id/food_item_heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="5dp"
                 android:textSize="21sp"
                 android:textColor="@android:color/white"
-                android:text="بواقى محشى ورق عنب" />
+                android:text="Fool and Ta'mia" />
             <TextView
+                android:id="@+id/food_item_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="5dp"
                 android:textSize="17sp"
                 android:textColor="@android:color/darker_gray"
-                android:text="وجبة متكاملة كاملة شافية مشفية" />
+                android:text="Full Eastern Breakfast" />
         </LinearLayout>
 
 
