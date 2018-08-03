@@ -24,6 +24,9 @@ public class main_activity extends AppCompatActivity {
                 break;
             case R.id.health_activity:
                 startActivity(new Intent(getBaseContext(),health_activity.class));
+            case R.id.food_activity:
+                startActivity(new Intent(getBaseContext(),food_activity.class));
+
         }
 
     }
