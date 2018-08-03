@@ -50,7 +50,7 @@
                     android:background="@drawable/btn_bg_lcornered"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:onClick="navigateScreen"
                     android:orientation="vertical"
                     android:gravity="center"
@@ -77,10 +77,10 @@
 
 
                 <LinearLayout
+                    android:id="@+id/health_activity"
                     android:layout_width="0dp"
-                    android:id="@+id/healthLL"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@drawable/btn_bg_rcornered"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
@@ -104,7 +104,7 @@
                         android:layout_marginTop="5dp"
                         android:textColor="@android:color/white"
                         android:textSize="17sp"
-                        android:text="Medical" />
+                        android:text="Medical Service" />
 
                 </LinearLayout>
 
@@ -119,6 +119,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/Housing_activity"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_bg_lcornered"
@@ -131,9 +132,9 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:src="@drawable/hospital_bg"
+                        android:src="@drawable/home_ic"
                         android:tint="@color/colorAccent"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:adjustViewBounds="true" />
@@ -145,15 +146,16 @@
                         android:layout_marginTop="5dp"
                         android:textSize="17sp"
                         android:textColor="@android:color/white"
-                        android:text="Medical" />
+                        android:text="Housing" />
 
                 </LinearLayout>
 
 
                 <LinearLayout
+                    android:id="@+id/transport_activity"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@drawable/btn_bg_rcornered"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
@@ -192,6 +194,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/food_activity"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_bg_lcornered"
@@ -204,7 +207,7 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:src="@drawable/hospital_bg"
+                        android:src="@drawable/food"
                         android:tint="@color/colorAccent"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
@@ -218,12 +221,13 @@
                         android:textColor="@android:color/white"
                         android:layout_marginTop="5dp"
                         android:textSize="17sp"
-                        android:text="Medical" />
+                        android:text="Food Service" />
 
                 </LinearLayout>
 
 
                 <LinearLayout
+                    android:id="@+id/humane_activity"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -240,7 +244,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/train_icn"
+                        android:src="@drawable/humane"
                         android:tint="@color/colorAccent"/>
 
                     <TextView
@@ -250,88 +254,13 @@
                         android:layout_marginTop="5dp"
                         android:textSize="17sp"
                         android:textColor="@android:color/white"
-                        android:text="Transportation" />
+                        android:text="Special Service" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/gatherLocLL"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_bg_lcornered"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="navigateScreen"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:src="@drawable/hospital_bg"
-                        android:tint="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:adjustViewBounds="true"
-                        android:id="@+id/iv_marker" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@android:color/white"
-                        android:textSize="17sp"
-                        android:text="Medical" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/currentLocLL"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_bg_rcornered"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:onClick="navigateScreen"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/train_icn"
-                        android:tint="@color/colorAccent"
-                        android:id="@+id/iv_maps" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@android:color/white"
-                        android:textSize="17sp"
-                        android:text="Transportation" />
-
-                </LinearLayout>
-
-            </LinearLayout>
 
 
         </LinearLayout>

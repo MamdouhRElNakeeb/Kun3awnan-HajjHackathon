@@ -30,7 +30,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp">
 
@@ -40,11 +40,11 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/BonesLL"
+                    android:id="@+id/bones_doctor"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_bg_lcornered"
@@ -77,6 +77,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/heart_doctor"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -114,10 +115,11 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/first_aid"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_bg_lcornered"
@@ -132,8 +134,8 @@
                     <ImageView
                         android:src="@drawable/firstaid"
                         android:tint="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_weight="1"
                         android:adjustViewBounds="true" />
 
@@ -150,6 +152,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/dentist"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -162,8 +165,8 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/tooth"
@@ -187,13 +190,14 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/public_health"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_bg_lcornered"
+                    android:background="@drawable/btn_gradient"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_height="wrap_content"
@@ -205,8 +209,8 @@
                     <ImageView
                         android:src="@drawable/hospital_bg"
                         android:tint="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_weight="1"
                         android:adjustViewBounds="true" />
 
@@ -217,118 +221,10 @@
                         android:textColor="@android:color/white"
                         android:layout_marginTop="5dp"
                         android:textSize="17sp"
-                        android:text="Medical" />
+                        android:text="Public Health" />
 
                 </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_bg_rcornered"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:onClick="navigateScreen"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/train_icn"
-                        android:tint="@color/colorAccent"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:textSize="17sp"
-                        android:textColor="@android:color/white"
-                        android:text="Transportation" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/gatherLocLL"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_bg_lcornered"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="navigateScreen"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:src="@drawable/hospital_bg"
-                        android:tint="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:adjustViewBounds="true"
-                        android:id="@+id/iv_marker" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@android:color/white"
-                        android:textSize="17sp"
-                        android:text="Medical" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/currentLocLL"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_bg_rcornered"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:onClick="navigateScreen"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/train_icn"
-                        android:tint="@color/colorAccent"
-                        android:id="@+id/iv_maps" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@android:color/white"
-                        android:textSize="17sp"
-                        android:text="Transportation" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
