@@ -24,7 +24,7 @@ public class Home extends AppCompatActivity{
             case R.id.getLostLL:
                 startActivity(new Intent(getBaseContext(), GetLost.class));
                 break;
-            case R.id.healthLL:
+            case R.id.health_activity:
                 startActivity(new Intent (Home.this, health_activity.class));
         }
 

@@ -33,6 +33,8 @@
         <activity android:name=".activity.Home" />
         <activity android:name=".activity.GetLost" />
         <activity android:name=".activity.main_activity" />
+        <activity android:name=".activity.food_activity" />
+
 
 
         <!--
