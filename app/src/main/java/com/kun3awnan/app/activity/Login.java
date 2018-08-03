@@ -119,7 +119,7 @@ public class Login extends AppCompatActivity {
         {
             // user is verified, so you can finish this activity or send user to activity which you want.
             Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(Login.this, Home.class));
+            startActivity(new Intent(Login.this, main_activity.class));
             finish();
         }
         else

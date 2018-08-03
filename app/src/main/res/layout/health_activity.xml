@@ -30,7 +30,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp">
 
@@ -40,7 +40,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -115,7 +115,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -165,9 +165,9 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_weight="50dp"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/tooth"
                         android:tint="@color/colorAccent"/>
@@ -190,7 +190,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -209,9 +209,9 @@
                     <ImageView
                         android:src="@drawable/hospital_bg"
                         android:tint="@color/colorAccent"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_weight="50dp"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true" />
 
                     <TextView
